@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const geistSans = Nunito({
+const nunito = Nunito({
   variable: "--font-nunito",
+    weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["cyrillic"],
 });
 
@@ -21,9 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} antialiased`}
+        className={`${nunito.variable} antialiased`}
       >
       <div className="px-20 py-10">
+          <Header />
           {children}
       </div>
       </body>
