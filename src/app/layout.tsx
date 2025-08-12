@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/shared/Header";
 
 const nunito = Nunito({
   variable: "--font-nunito",
-    weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["cyrillic"],
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${nunito.variable} antialiased`}
-      >
-      <div className="px-20 py-10">
+      <body className={`${nunito.className} antialiased`}>
+        <div className="px-20 py-10">
           <Header />
           {children}
-      </div>
+        </div>
       </body>
     </html>
   );
